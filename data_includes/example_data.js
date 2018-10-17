@@ -1,27 +1,13 @@
-// Include this line at the top of your scripts
-// See the documentation for more information:
-// 		https://lab.florianschwarz.net/PennController/wiki/documentation/
+// We will explain this line later
 PennController.ResetPrefix(null);
 
-
-// SAMPLE TRIAL
+// Use PennController to script your trial
 PennController(
-	newText("sentence", "<< Chris talks to itself >>")
-		.print()
-	,
-	newText("question", "this sounds...")
-		.print()
-	,
-	newScale("rating", 5)
-		.settings.before( newText("left" , "bad")  )
-		.settings.after(  newText("right", "good") )
-		.print()
-		.wait()		// The trial will end after a selection has been made
+    // We create a new text element that we name 'test sentence,' which contains the text of our complex test sentence
+    newText("test sentence", "A is colder than B, though A is not cold yet.")
+        .print() // This prints the text onto the screen
+    ,
+    // We create a key element that we name 'answer' and which reacts to any key press on F (coherent) or J (incoherent)
+    newKey("answer", "FJ")
+        .wait() // This waits for a key press before validation
 );
-
-
-// Learn how to use PennController on the website's tutorial:
-//		https://lab.florianschwarz.net/PennController/wiki/00-tutorial/
-//
-// Find more example experiments here:
-//		https://lab.florianschwarz.net/PennController/examples-of-experiments/
